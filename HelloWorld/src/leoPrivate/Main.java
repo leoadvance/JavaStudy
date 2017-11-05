@@ -4,8 +4,10 @@ public class Main {
     public static void main(String[] args) {
 	// write your code here
 
-        System.out.print("Hello World\n");
-        Veriable veriable1 = new Veriable("1");
+        System.out.printf("Hello World\n");
+
+        // 新建实例
+        Veriable veriable1 = new Veriable();
         veriable1.Test();
     }
 }
