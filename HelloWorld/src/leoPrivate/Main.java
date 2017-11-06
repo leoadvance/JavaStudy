@@ -20,5 +20,11 @@ public class Main {
             veriable2.iMember++;
             System.out.printf("veriable2.iStatic = %d, veriable2.iMember = %d\n", veriable2.iStatic, veriable2.iMember);
         }
+
+        System.out.println("veriable1.iFinal = " + veriable1.iFinal);
+//        veriable1.iFinal++;
+        veriable1.arrayFinal.add("aaa");
+        veriable1.arrayFinal.add("bbb");
+        System.out.println("veriable1.arrayFinal =" +  veriable1.arrayFinal);
     }
 }

@@ -1,5 +1,7 @@
 package leoPrivate;
 
+import java.util.ArrayList;
+
 public class Veriable {
 
     // 声明类变量 所有实例共享改变量
@@ -7,6 +9,12 @@ public class Veriable {
 
     // 声明成员变量
     int iMember = 0;
+
+    // final声明为常量 不可变
+    final int iFinal = 0;
+
+    // final声明的容器不可变 容器中内容可变
+    final ArrayList<String> arrayFinal = new ArrayList<>();
 
 
     public void Test(){
