@@ -26,5 +26,9 @@ public class Main {
         veriable1.arrayFinal.add("aaa");
         veriable1.arrayFinal.add("bbb");
         System.out.println("veriable1.arrayFinal =" +  veriable1.arrayFinal);
+
+        veriable1.S = "Name";
+        veriable1.ss[0] = "Hello";
+        System.out.println(veriable1.ss[0]);
     }
 }

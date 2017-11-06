@@ -16,6 +16,9 @@ public class Veriable {
     // final声明的容器不可变 容器中内容可变
     final ArrayList<String> arrayFinal = new ArrayList<>();
 
+    // 字符串变量 本质上是指针
+    String S = null;
+    final String[] ss = new String[10];
 
     public void Test(){
         System.out.printf("变量测试！\n");
