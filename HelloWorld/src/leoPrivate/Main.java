@@ -7,8 +7,8 @@ public class Main {
         System.out.printf("Hello World\n");
 
         // 新建实例
-        Veriable veriable1 = new Veriable();
-        Veriable veriable2 = new Veriable();
+        Veriable veriable1 = new Veriable("Class1");
+        Veriable veriable2 = new Veriable("Class2");
         veriable1.Test();
 
         for (int i = 0; i < 10; i++) {
@@ -30,5 +30,8 @@ public class Main {
         veriable1.S = "Name";
         veriable1.ss[0] = "Hello";
         System.out.println(veriable1.ss[0]);
+
+        System.out.println("Class1 name = " + veriable1.name + "\n");
+        System.out.println("Class2 name = " + veriable2.name + "\n");
     }
 }

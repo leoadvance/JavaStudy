@@ -16,8 +16,12 @@ public class Veriable {
     // final声明的容器不可变 容器中内容可变
     final ArrayList<String> arrayFinal = new ArrayList<>();
 
+    // final变量可以只声明不初始化，在构造函数中初始化
+    final String name;
+
     // 字符串变量 本质上是指针
     String S = null;
+
     final String[] ss = new String[10];
 
     public void Test(){
@@ -36,6 +40,13 @@ public class Veriable {
             nums[a] = random.nextInt();
             System.out.printf("a = %d 随机数 nums[%d] = %d\n", a, a, nums[a]);
         }
+
+    }
+
+    // 构造函数
+    public Veriable(String claseName){
+
+        name = claseName;
 
     }
 
