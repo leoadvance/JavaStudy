@@ -6,7 +6,7 @@ public class Main {
 
         System.out.printf("Hello World\n");
 
-        // 新建实例
+//        // 新建实例
         Veriable veriable1 = new Veriable("Class1");
         Veriable veriable2 = new Veriable("Class2");
         veriable1.Test();
@@ -22,7 +22,6 @@ public class Main {
         }
 
         System.out.println("veriable1.iFinal = " + veriable1.iFinal);
-//        veriable1.iFinal++;
         veriable1.arrayFinal.add("aaa");
         veriable1.arrayFinal.add("bbb");
         System.out.println("veriable1.arrayFinal =" +  veriable1.arrayFinal);
@@ -33,5 +32,9 @@ public class Main {
 
         System.out.println("Class1 name = " + veriable1.name + "\n");
         System.out.println("Class2 name = " + veriable2.name + "\n");
+        System.out.println("static iStatic = " + Veriable.iStatic + " static 声明的参数无需实例化就能访问\n");
+
+        // 静态函数
+        Veriable.staticTest2();
     }
 }

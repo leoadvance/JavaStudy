@@ -43,11 +43,25 @@ public class Veriable {
 
     }
 
+    // 静态函数
+    static void staticTest(){
+        System.out.println("这是一个静态函数staticTest\n");
+    }
+
+    // 静态函数
+    static void staticTest2(){
+        staticTest();
+    }
     // 构造函数
     public Veriable(String claseName){
 
         name = claseName;
 
+    }
+
+    // 静态代码块
+    static{
+        System.out.println("静态代码块在加载类时会自动执行\n");
     }
 
 }
