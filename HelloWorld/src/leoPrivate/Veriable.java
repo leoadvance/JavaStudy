@@ -41,6 +41,12 @@ public class Veriable {
             System.out.printf("a = %d 随机数 nums[%d] = %d\n", a, a, nums[a]);
         }
 
+        int [] arr = {1, 2, 3, 4, 5};
+        System.out.println("测试foreach用法");
+        for (int x : arr) {
+            System.out.println("x = " + x);
+        }
+
     }
 
     // 静态函数
@@ -62,6 +68,17 @@ public class Veriable {
     // 静态代码块
     static{
         System.out.println("静态代码块在加载类时会自动执行\n");
+    }
+
+    class TestClass{
+        int i = 0;
+        public void drawSahpe() {
+            System.out.println("内部类");
+        }
+    }
+
+    public void fun(){                      // 定义外部类的方法
+        new TestClass().drawSahpe() ;               // 通过内部类的实例化对象调用方法
     }
 
 }
