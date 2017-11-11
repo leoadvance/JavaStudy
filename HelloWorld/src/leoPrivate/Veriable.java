@@ -17,7 +17,7 @@ public class Veriable {
     final ArrayList<String> arrayFinal = new ArrayList<>();
 
     // final变量可以只声明不初始化，在构造函数中初始化
-    final String name;
+    String name = "NULL";
 
     // 字符串变量 本质上是指针
     String S = null;
@@ -65,10 +65,14 @@ public class Veriable {
     public Veriable(String className){
 
         name = className;
-        System.out.println("Vearable 类构造函数运行， className = " + className);
+        System.out.println("Vearable 类 有参数构造方法运行， className = " + className);
 
     }
+    public Veriable(){
 
+        System.out.println("Vearable 类 无参数构造方法运行");
+
+    }
     // 静态代码块
     static{
         System.out.println("静态代码块在加载类时会自动执行\n");
@@ -96,8 +100,8 @@ class VeriableSon extends Veriable{
         System.out.println("VearableSon 类构造函数运行，类名 = " + className);
     }
 
-//    public VeriableSon() {
-//
-//        System.out.println("VearableSon 类 无参数 构造函数运行");
-//    }
+    public VeriableSon() {
+
+        System.out.println("VearableSon 类 无参数 构造函数运行");
+    }
 }
