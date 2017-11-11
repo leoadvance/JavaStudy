@@ -24,8 +24,11 @@ public class Veriable {
 
     final String[] ss = new String[10];
 
+    private int iPrivate = 0;
+
     public void Test(){
-        System.out.printf("变量测试！\n");
+        iPrivate++;
+        System.out.println("变量测试！ Class = " + name);
 
         // 声明随机数实例
         java.util.Random random = new java.util.Random();
@@ -59,9 +62,10 @@ public class Veriable {
         staticTest();
     }
     // 构造函数
-    public Veriable(String claseName){
+    public Veriable(String className){
 
-        name = claseName;
+        name = className;
+        System.out.println("Vearable 类构造函数运行， className = " + className);
 
     }
 
@@ -81,4 +85,19 @@ public class Veriable {
         new TestClass().drawSahpe() ;               // 通过内部类的实例化对象调用方法
     }
 
+}
+class VeriableSon extends Veriable{
+
+    int iSon = 0;
+
+    public VeriableSon(String className) {
+
+        super(className);
+        System.out.println("VearableSon 类构造函数运行，类名 = " + className);
+    }
+
+//    public VeriableSon() {
+//
+//        System.out.println("VearableSon 类 无参数 构造函数运行");
+//    }
 }
