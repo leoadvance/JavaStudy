@@ -110,7 +110,8 @@ class VeriableSon extends Veriable{
         System.out.println("VearableSon 类 无参数 构造函数运行" );
     }
 
-    public void Test(int i){
-        System.out.println("子类Test重构" + i);
+    @Override
+    public void Test(){
+        System.out.println("子类Test重构");
     }
 }
