@@ -49,6 +49,7 @@ public class Veriable {
         for (int x : arr) {
             System.out.println("x = " + x);
         }
+        this.privateTest();
 
     }
 
@@ -61,11 +62,17 @@ public class Veriable {
     static void staticTest2(){
         staticTest();
     }
+
+    private void privateTest(){
+        System.out.println("这一个private方法，无法被子类继承");
+    }
+
     // 构造函数
     public Veriable(String className){
 
         name = className;
         System.out.println("Vearable 类 有参数构造方法运行， className = " + className);
+
 
     }
     public Veriable(){
@@ -75,19 +82,17 @@ public class Veriable {
     }
     // 静态代码块
     static{
-        System.out.println("静态代码块在加载类时会自动执行\n");
+        System.out.println("静态代码块在加载类时会自动执行,只会运行一次，限于构造函数运行\n");
     }
 
     class TestClass{
         int i = 0;
         public void drawSahpe() {
+
             System.out.println("内部类");
         }
     }
 
-    public void fun(){                      // 定义外部类的方法
-        new TestClass().drawSahpe() ;               // 通过内部类的实例化对象调用方法
-    }
 
 }
 class VeriableSon extends Veriable{
@@ -100,8 +105,12 @@ class VeriableSon extends Veriable{
         System.out.println("VearableSon 类构造函数运行，类名 = " + className);
     }
 
-    public VeriableSon() {
+    public VeriableSon( ) {
 
-        System.out.println("VearableSon 类 无参数 构造函数运行");
+        System.out.println("VearableSon 类 无参数 构造函数运行" );
+    }
+
+    public void Test(int i){
+        System.out.println("子类Test重构" + i);
     }
 }

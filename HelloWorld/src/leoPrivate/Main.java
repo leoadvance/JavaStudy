@@ -38,7 +38,10 @@ public class Main {
 //        // 静态函数
 //        Veriable.staticTest2();
 
-        VeriableSon1.Test();
+        // 调用父类方法
+        VeriableSon1.Test(1);
+        VeriableSon.staticTest();
+        VeriableSon1.staticTest();
     }
 }
 
