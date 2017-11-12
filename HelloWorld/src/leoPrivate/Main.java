@@ -6,6 +6,11 @@ public class Main {
 
         System.out.printf("Hello World\n");
 
+        // 实例化贪吃蛇类
+        Snake snakeGame = new Snake();
+
+
+
 //        // 新建实例
         Veriable    veriable1    = new Veriable("Class1");
         Veriable    veriable2    = new Veriable("Class2");
@@ -38,10 +43,10 @@ public class Main {
 //        // 静态函数
 //        Veriable.staticTest2();
 
-        // 调用父类方法
-        VeriableSon1.Test(1);
-        VeriableSon.staticTest();
-        VeriableSon1.staticTest();
+//        // 调用父类方法
+//        VeriableSon1.Test(1);
+//        VeriableSon.staticTest();
+//        VeriableSon1.staticTest();
     }
 }
 
