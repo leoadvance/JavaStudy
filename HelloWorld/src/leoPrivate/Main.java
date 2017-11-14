@@ -1,7 +1,18 @@
 package leoPrivate;
+
+import javax.swing.*;
+
 public class Main {
 
     public static void main(String[] args) {
+
+        JFrame frame = new JFrame("ui");
+
+        frame.setContentPane(new GuiTest().panel1);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.pack();
+        frame.setVisible(true);
+
 	// write your code here
 
         System.out.printf("Hello World\n");
