@@ -8,7 +8,7 @@ public class Main {
 
         JFrame frame = new JFrame("ui");
 
-        frame.setContentPane(new GuiTest().panel1);
+        frame.setContentPane(new GuiTest().jpanelMain);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
