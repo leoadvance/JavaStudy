@@ -2,6 +2,8 @@ package leoPrivate;
 
 import java.util.ArrayList;
 
+import apple.laf.JRSUIConstants.SegmentLeadingSeparator;
+
 public class Veriable {
 
     // 声明类变量 所有实例共享改变量
@@ -56,6 +58,7 @@ public class Veriable {
     // 静态函数
     static void staticTest(){
         System.out.println("这是一个静态函数staticTest\n");
+
     }
 
     // 静态函数
