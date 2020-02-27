@@ -11,8 +11,29 @@ public class Main {
 //        int[] nums = {0,901,482,1771};
 //        mymain.findNumbers(nums);
 
-        mymain.numJewelsInStones("z", "ZZ");
-
+//        mymain.numJewelsInStones("z", "ZZ");
+        String s = "RLRRRLLRLL";
+        mymain.balancedStringSplit(s);
+    }
+    // 题目考察RL中出现同等长度字符次数 其实就是左右步行回归原点问题
+    public int balancedStringSplit(String s) {
+//        System.out.println(s);
+        int temp = 0;
+        int groupNum = 0;
+        // 遍历
+        for(char c:s.toCharArray()) {
+            if (c == 'R') {
+                temp++;
+            }
+            else {
+                temp--;
+            }
+            if (temp == 0) {
+                groupNum++;
+            }
+        }
+        System.out.println(s + " Group = " + groupNum);
+        return groupNum;
     }
     public int numJewelsInStones(String J, String S) {
         Map<Character,Integer> tempMap = new HashMap<Character,Integer>();
