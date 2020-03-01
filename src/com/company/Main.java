@@ -1,17 +1,18 @@
 package com.company;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.ListIterator;
 import java.util.Map;
 
+import static java.lang.Math.abs;
+import static java.lang.Math.max;
+
 public class Main {
 
     public static void main(String[] args) {
-        Main mymain = new Main();
-        ListNode listNode = new ListNode(1);
-        listNode.next = new ListNode(0);
-        listNode.next.next = new ListNode(1);
-        listNode.next.next.next = null;
+        Main myMain = new Main();
+
 //        int [] nums = {12,345,2,6,7896};
 //        int[] nums = {0,901,482,1771};
 //        mymain.findNumbers(nums);
@@ -19,7 +20,68 @@ public class Main {
 //        mymain.numJewelsInStones("z", "ZZ");
 //        String s = "RLRRRLLRLL";
 //        mymain.balancedStringSplit(s);
-        mymain.getDecimalValue(listNode);
+
+//        ListNode listNode = new ListNode(1);
+//        listNode.next = new ListNode(0);
+//        listNode.next.next = new ListNode(1);
+//        listNode.next.next.next = null;
+//        mymain.getDecimalValue(listNode);
+
+//        int[][] grid = {{4,3,2,-1},{3,2,1,-1},{1,1,-1,-2},{-1,-1,-2,-3}};
+//        mymain.countNegatives(grid);
+
+//        int[][] grid = {{1,1},{3,4},{-1,0}};
+//        myMain.minTimeToVisitAllPoints(grid);
+
+//        int num = 9669;
+//        myMain.maximum69Number(num);
+//        int[] num = {17,18,5,4,6,1};
+//        myMain.replaceElements(num);
+
+        myMain.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#");
+    }
+
+    public int maximum69Number (int num) {
+        int maxVal = num;
+        String numStr = String.valueOf(num);
+        char[] numChar = numStr.toCharArray();
+
+        for (int i = 0; i < numChar.length; i++){
+            if (numChar[i] == '6'){
+                maxVal += 3 * Math.pow(10, (numChar.length - i - 1));
+                break;
+            }
+        }
+        System.out.println(maxVal);
+        return maxVal;
+
+    }
+    public int minTimeToVisitAllPoints(int[][] points) {
+        int count = 0;
+        for (int i = 0; i < points.length - 1; i++){
+            count += Math.max(Math.abs(points[i][0] - points[i + 1][0]), Math.abs(points[i][1] - points[i + 1][1]));
+        }
+        System.out.println("count = " + count);
+        return count;
+
+    }
+
+    public int countNegatives(int[][] grid) {
+        // 统计负数个数 数组降幂排列
+        int cuontNum = 0;
+        for(int i = 0; i < grid.length; i ++){
+            int j = 0;
+            for(j = 0; j < grid[i].length; j++){
+                if (grid[i][j] < 0){
+                    break;
+                }
+            }
+            cuontNum += (grid[i].length - j);
+
+        }
+        System.out.println("cuontNum = " + cuontNum);
+        return cuontNum;
+
     }
     public int getDecimalValue(ListNode head) {
     // 题目是把链表里的0和1按二进制方式组合并输出，用指针+链表+位移即可
@@ -94,5 +156,50 @@ public class Main {
         }
         System.out.printf("even num = %d\r\n", even);
         return even;
+    }
+
+    public int[] replaceElements(int[] arr) {
+        int[] outList = new int[arr.length];
+        outList[arr.length - 1] = -1;
+
+        for(int i = arr.length - 1; i > 0; i--){
+            if (arr[i] > outList[i]){
+                outList[i - 1] = arr[i];
+            }
+            else{
+                outList[i - 1] = outList[i];
+            }
+//            System.out.println("arr = " + arr[i]);
+
+        }
+        System.out.println(Arrays.toString(outList));
+        int b = 'a' - '0';
+        System.out.println('a' - '0');
+        return outList;
+    }
+
+    public String freqAlphabets(String s) {
+        System.out.println(s);
+        char[] charList = s.toCharArray();
+        StringBuffer stringBuffer = new StringBuffer();
+        for(int i = charList.length - 1; i >= 0 ;){
+            int temp;
+            if (charList[i] == '#'){
+                temp = (charList[i - 1] - '0');
+                temp += (charList[i - 2] - '0') * 10;
+                temp -= 10;
+                temp += 'j';
+                i -= 3;
+            }
+            else{
+                temp = charList[i] - '1' + 'a';
+                i--;
+            }
+            stringBuffer.append((char)temp);
+        }
+        stringBuffer.reverse();
+        String strOut = stringBuffer.toString();
+        System.out.println(strOut);
+        return strOut;
     }
 }
