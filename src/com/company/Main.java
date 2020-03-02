@@ -38,9 +38,24 @@ public class Main {
 //        int[] num = {17,18,5,4,6,1};
 //        myMain.replaceElements(num);
 
-        myMain.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#");
+//        myMain.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#");
+        myMain.numberOfSteps(17);
     }
+    public int numberOfSteps (int num) {
+        int outStep = 0;
+        while(num > 0){
+            if (num % 2 == 0){
+                num /= 2;
+            }
+            else{
+                num -= 1;
+            }
+            outStep += 1;
+        }
+        System.out.println(outStep);
+        return outStep;
 
+    }
     public int maximum69Number (int num) {
         int maxVal = num;
         String numStr = String.valueOf(num);
