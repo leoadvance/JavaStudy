@@ -39,7 +39,33 @@ public class Main {
 //        myMain.replaceElements(num);
 
 //        myMain.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#");
-        myMain.numberOfSteps(17);
+//        myMain.numberOfSteps(17);
+        int[] num = {8,1,2,2,3};
+        myMain.smallerNumbersThanCurrent(num);
+    }
+    public int[] smallerNumbersThanCurrent(int[] nums) {
+        int[] outBuffer = nums.clone();
+        Map<Integer, Integer> mapBuffer = new HashMap<Integer, Integer>();
+
+
+        // 按升序排列
+        Arrays.sort(nums);
+
+        // 比最小值更小的是0个
+        mapBuffer.put(nums[0], 0);
+
+        // 遍历 记录每个最小值出现的下标，即比它小的值的个数
+        for(int i = 0; i < nums.length - 1; i++){
+            if (nums[i] != nums[i + 1]){
+                mapBuffer.put(nums[i + 1], i + 1);
+            }
+        }
+        // 根据map求德每位比它小值的个数
+        for(int i = 0; i < nums.length ; i++){
+            outBuffer[i] = mapBuffer.get(outBuffer[i]);
+        }
+        System.out.println(Arrays.toString(outBuffer));
+        return outBuffer;
     }
     public int numberOfSteps (int num) {
         int outStep = 0;
