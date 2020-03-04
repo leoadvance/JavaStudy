@@ -1,9 +1,6 @@
 package com.company;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.ListIterator;
-import java.util.Map;
+import java.util.*;
 
 import static java.lang.Math.abs;
 import static java.lang.Math.max;
@@ -42,7 +39,30 @@ public class Main {
 //        myMain.numberOfSteps(17);
 //        int[] num = {8,1,2,2,3};
 //        myMain.smallerNumbersThanCurrent(num);
-        myMain.defangIPaddr("255.100.50.0");
+//        myMain.defangIPaddr("255.100.50.0");
+        int[] num = {1,2,3,4};
+        myMain.decompressRLElist(num);
+    }
+
+    public int[] decompressRLElist(int[] nums) {
+
+        // 声明可变长数组
+        ArrayList<Integer> arrayList = new ArrayList<>();
+        int i,j;
+        for(i = 0; i < nums.length; i += 2){
+            for (j = 0; j < nums[i]; j++){
+                arrayList.add(nums[i + 1]);
+            }
+
+        }
+
+        // Arraylist 转list
+        int[] numList = new int[arrayList.size()];
+        for(i = 0; i < numList.length; i++){
+            numList[i] = arrayList.get(i);
+            System.out.println(numList[i]);
+        }
+        return numList;
     }
     public String defangIPaddr(String address) {
         
