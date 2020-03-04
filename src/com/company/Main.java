@@ -40,8 +40,14 @@ public class Main {
 
 //        myMain.freqAlphabets("12345678910#11#12#13#14#15#16#17#18#19#20#21#22#23#24#25#26#");
 //        myMain.numberOfSteps(17);
-        int[] num = {8,1,2,2,3};
-        myMain.smallerNumbersThanCurrent(num);
+//        int[] num = {8,1,2,2,3};
+//        myMain.smallerNumbersThanCurrent(num);
+        myMain.defangIPaddr("255.100.50.0");
+    }
+    public String defangIPaddr(String address) {
+        
+        return address.replace(".","[.]");
+
     }
     public int[] smallerNumbersThanCurrent(int[] nums) {
         int[] outBuffer = nums.clone();
