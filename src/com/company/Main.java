@@ -40,10 +40,26 @@ public class Main {
 //        int[] num = {8,1,2,2,3};
 //        myMain.smallerNumbersThanCurrent(num);
 //        myMain.defangIPaddr("255.100.50.0");
-        int[] num = {1,2,3,4};
-        myMain.decompressRLElist(num);
+//        int[] num = {1,2,3,4};
+////        myMain.decompressRLElist(num);
+        myMain.sumZero(1);
     }
+    public int[] sumZero(int n) {
+        int[] outList = new int[n];
+        int i,j = 0;
+        for(i = 0; i < n / 2; i++){
+            outList[j++] = (i + 1);
+            outList[j++] = -i - 1;
+        }
+        if (n % 2 == 1){
+            outList[j] = 0;
+        }
 
+        for(j = 0; j < n; j++){
+            System.out.println(outList[j]);
+        }
+        return outList;
+    }
     public int[] decompressRLElist(int[] nums) {
 
         // 声明可变长数组
