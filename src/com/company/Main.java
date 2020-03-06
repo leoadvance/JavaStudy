@@ -42,7 +42,69 @@ public class Main {
 //        myMain.defangIPaddr("255.100.50.0");
 //        int[] num = {1,2,3,4};
 ////        myMain.decompressRLElist(num);
-        myMain.sumZero(1);
+//        myMain.sumZero(1);
+        int[] nums = {1,2,3,4,5};
+        ListNode listNode = myMain.createListNode(nums);
+        myMain.reverseList(listNode);
+    }
+
+    /**
+     * 链表逆向
+     * @param head 待逆向链表
+     * @return     逆向后链表
+     */
+    public ListNode reverseList(ListNode head) {
+
+        // 空链表或者单链表直接返回
+        if ((head == null) || (head.next == null)){
+            return head;
+        }
+
+        ListNode outHead = new ListNode(head.val);
+        ListNode tempHead;
+        head = head.next;
+        // 循环翻转
+        while(head != null){
+
+            // 暂存第二节以后链表
+            tempHead = head.next;
+
+            // 取出第一节链表拼到输出端
+            head.next = outHead;
+            outHead = head;
+            head = tempHead;
+
+        }
+//        tempHead = outHead;
+//        while(tempHead != null){
+//
+//            System.out.println(tempHead.val);
+//            tempHead = tempHead.next;
+//
+//        }
+
+        return outHead;
+
+    }
+    /**
+     * 根据数组生成链表
+     * @param nums 待组成链表的数组
+     * @return     链表
+     */
+    public ListNode createListNode(int[] nums) {
+        ListNode outListNode = new ListNode(nums[0]);
+        ListNode currentListNode;
+        currentListNode = outListNode;
+        for(int i = 1; i < nums.length; i++){
+            currentListNode.next = new ListNode(nums[i]);
+            currentListNode = currentListNode.next;
+        }
+        currentListNode = outListNode;
+        for(int i = 0; i < nums.length; i++){
+            System.out.println(currentListNode.val);
+            currentListNode = currentListNode.next;
+        }
+        return outListNode;
     }
     public int[] sumZero(int n) {
         int[] outList = new int[n];
