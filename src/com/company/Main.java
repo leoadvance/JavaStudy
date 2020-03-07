@@ -43,11 +43,39 @@ public class Main {
 //        int[] num = {1,2,3,4};
 ////        myMain.decompressRLElist(num);
 //        myMain.sumZero(1);
-        int[] nums = {1,2,3,4,5};
-        ListNode listNode = myMain.createListNode(nums);
-        myMain.reverseList(listNode);
+//        int[] nums = {1,2,3,4,5};
+//        ListNode listNode = myMain.createListNode(nums);
+//        myMain.reverseList(listNode);
+        int[] nums = {2,2,1,1,1,2,2};
+        myMain.majorityElement(nums);
     }
+    public int majorityElement(int[] nums) {
+        HashMap<Integer, Integer> tempMap = new HashMap<Integer, Integer>();
+        Integer val = 0;
+        if (nums.length == 1){
+            return nums[0];
+        }
+        int i = 0;
+        for (i = 0; i < nums.length; i++){
+            val = tempMap.get(nums[i]);
 
+            if (val == null){
+                tempMap.put(nums[i], 1);
+            }
+            else{
+                val += 1;
+                if (val > nums.length / 2) {
+                    System.out.println(nums[i]);
+                    break;
+                }
+                else{
+                    tempMap.put(nums[i], val);
+                }
+
+            }
+        }
+        return nums[i];
+    }
     /**
      * 链表逆向
      * @param head 待逆向链表
