@@ -46,8 +46,28 @@ public class Main {
 //        int[] nums = {1,2,3,4,5};
 //        ListNode listNode = myMain.createListNode(nums);
 //        myMain.reverseList(listNode);
-        int[] nums = {2,2,1,1,1,2,2};
-        myMain.majorityElement(nums);
+//        int[] nums = {2,2,1,1,1,2,2};
+//        myMain.majorityElement(nums);
+
+        int[] nums = {5};
+        myMain.findDisappearedNumbers(nums);
+    }
+    public List<Integer> findDisappearedNumbers(int[] nums) {
+        HashMap<Integer,Integer> tempMap = new HashMap<>();
+        List<Integer> outList = new ArrayList();
+        for(int i = 1; i <= nums.length; i++){
+            tempMap.put(i, 0);
+        }
+        for(int i = 0; i < nums.length; i++){
+            tempMap.remove(nums[i]);
+        }
+
+
+        for (Integer key : tempMap.keySet()) {
+            outList.add(key);
+//            System.out.println(key);
+        }
+        return outList;
     }
     public int majorityElement(int[] nums) {
         HashMap<Integer, Integer> tempMap = new HashMap<Integer, Integer>();
